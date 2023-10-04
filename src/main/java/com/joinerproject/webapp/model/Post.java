@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import net.bytebuddy.implementation.bind.MethodDelegationBinder.ParameterBinding.Anonymous;
+
 
 @Entity
 public class Post implements Serializable {
@@ -11,7 +13,7 @@ public class Post implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
     private Long id;
-    private String name;
+    private String name = "Anonymous";
     private String message;
     public Long getId() {
         return id;
