@@ -1,11 +1,9 @@
 package com.joinerproject.webapp.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.*;
-
-import net.bytebuddy.implementation.bind.MethodDelegationBinder.ParameterBinding.Anonymous;
-
 
 @Entity
 public class Post implements Serializable {
@@ -15,6 +13,10 @@ public class Post implements Serializable {
     private Long id;
     private String name = "Anonymous";
     private String message;
+
+    @OneToMany(mappedBy="post")
+    private Set<Comment> comments;
+
     public Long getId() {
         return id;
     }

@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.joinerproject.webapp.model.Post;
 import com.joinerproject.webapp.service.PostService;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
