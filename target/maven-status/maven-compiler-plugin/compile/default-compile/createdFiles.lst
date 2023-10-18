@@ -1,0 +1,9 @@
+com\joinerproject\webapp\model\Post.class
+com\joinerproject\webapp\repo\CommentRepo.class
+com\joinerproject\webapp\model\Comment.class
+com\joinerproject\webapp\service\PostService.class
+com\joinerproject\webapp\CommentResource.class
+com\joinerproject\webapp\exception\PostNotFoundException.class
+com\joinerproject\webapp\WebappApplication.class
+com\joinerproject\webapp\PostResource.class
+com\joinerproject\webapp\repo\PostRepo.class

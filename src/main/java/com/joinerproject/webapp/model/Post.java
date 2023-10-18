@@ -14,9 +14,6 @@ public class Post implements Serializable {
     private String name = "Anonymous";
     private String message;
 
-    @OneToMany(mappedBy="post")
-    private Set<Comment> comments;
-
     public Long getId() {
         return id;
     }

@@ -22,7 +22,7 @@ import com.joinerproject.webapp.service.PostService;
 
 
 @RestController
-@RequestMapping("/comments")
+@RequestMapping("/comment")
 public class CommentResource {
     private final CommentService commentService;
 
@@ -35,18 +35,23 @@ public class CommentResource {
         List<Comment> comments = commentService.findCommentsById(id);
         return new ResponseEntity<>(comments, HttpStatus.OK);
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Comment>> getallComments() {
+        List<Comment> comments = commentService.findAllComments();
+        return new ResponseEntity<>(comments, HttpStatus.OK);
+    }
     
     @PostMapping("/add")
     public ResponseEntity<Comment> addComment(@RequestBody Comment comment) {
         Comment newComment = commentService.addComment(comment);
         return new ResponseEntity<Comment>(newComment, HttpStatus.OK);
     }
-    /*
+
     @Transactional
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deletePost(@PathVariable("id") Long id) {
-        postService.deletePostById(id);
+    public ResponseEntity<?> deleteComment(@PathVariable("id") Long id) {
+        commentService.deleteCommentById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    */
 }

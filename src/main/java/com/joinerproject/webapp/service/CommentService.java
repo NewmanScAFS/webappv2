@@ -34,5 +34,13 @@ public class CommentService {
     public Comment addComment(Comment comment) {
         return commentRepo.save(comment);
     }
+
+    public void deleteCommentById(Long id) {
+        commentRepo.deleteById(id);;
+    }
+
+    public List<Comment> findAllComments() {
+        return commentRepo.findAll();
+    }
 }
 

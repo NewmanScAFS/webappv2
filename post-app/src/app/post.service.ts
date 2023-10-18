@@ -19,6 +19,10 @@ export class PostService {
         return this.http.get<Post[]>(`${this.apiServerUrl}/post/all`);
     }
 
+    public getPost(postId:number): Observable<Post> {
+        return this.http.get<Post>(`${this.apiServerUrl}/post/find/${postId}`);
+    }
+
     public addPost(post: Post): Observable<Post> {
         return this.http.post<Post>(`${this.apiServerUrl}/post/add`, post);
     }
